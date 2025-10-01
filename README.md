@@ -1,43 +1,51 @@
-# Svelte + Vite
+# 🚀 Svelte + Vite 開発テンプレート
+このテンプレートは、**Vite 上で Svelte を使った開発**を始めたい方向けのスタートポイントです。
 
-This template should help get you started developing with Svelte in Vite.
+---
 
-## Recommended IDE Setup
+## 🛠 推奨 IDE
+- ** [VS Code](https://code.visualstudio.com/) + [Svelte拡張](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) **
+  
+---
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+## 📦 公式フレームワークを使いたい場合
+もし本格的なアプリ開発を考えているなら **[SvelteKit](https://github.com/sveltejs/kit#readme)** をチェックしてみてください。
 
-## Need an official Svelte framework?
+- Vite ベースで高速
+- サーバーレス対応でどこでもデプロイ可能
+- TypeScript、SCSS、Less に標準対応
+- mdsvex、GraphQL、PostCSS、Tailwind CSS なども簡単に追加可能
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+---
 
-## Technical considerations
+## 💡 このテンプレートを使う理由
+- SvelteKit のような大規模フレームワークではなく、**まずは Vite + Svelte を試したい初心者向け**です。
+- 独自のルーティング機能があり、シンプルなアプリ作りに便利です。
+- HMR（ホットリロード）やインテリセンスなど、開発しやすい環境をすぐに使えます。
+- 将来的に SvelteKit の機能を使いたくなった場合も、移行しやすい構造になっています。
 
-**Why use this over SvelteKit?**
+---
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+## 🔧 `.vscode/extensions.json` について
+- 他のテンプレートでは README を読んで拡張機能をインストールします。
+- このファイルを使うと、プロジェクトを開いたときに **推奨拡張機能のインストールを案内** してくれます。
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+---
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+## ✅ JS テンプレートで `checkJs` を有効にしている理由
+- 実行中に変数の型が意図せず変わることがあります。
+- `checkJs` を有効にすることで、そういったミスを事前にチェック可能。
+- 動的型付けの JavaScript を活かしたい場合は、簡単に設定を変更できます。
 
-**Why include `.vscode/extensions.json`?**
+---
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+## ⚠️ HMR（ホットリロード）でコンポーネントの状態が保持されない理由
+- HMR は便利ですが、状態保持には注意点があります。
+- `svelte-hmr` や `@sveltejs/vite-plugin-svelte` では、**予想外の動作を避けるためデフォルトで無効**になっています。
+- コンポーネント内で状態を保持したい場合は、**外部ストア**を作ることをおすすめします。HMR によって置き換えられません。
 
-**Why enable `checkJs` in the JS template?**
+---
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+## 📝 まとめ
+このテンプレートは、Svelte を学びながら Vite プロジェクトを始めたい初心者にぴったりです。  
+必要な機能だけを揃えているので、**すぐに開発を始められます**。
