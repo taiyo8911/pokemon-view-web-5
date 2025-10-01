@@ -1,0 +1,79 @@
+/* -----------------------------------
+   ルート（全体）設定
+----------------------------------- */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* 主要なサンセリフ系フォントを順番に指定 */
+  line-height: 1.5;
+  /* 行間を1.5に設定 */
+  font-weight: 400;
+  /* 標準の太さ */
+
+  color-scheme: light dark;
+  /* ダークモード / ライトモード両対応 */
+  color: rgba(255, 255, 255, 0.87);
+  /* 文字色（白に近い） */
+  background-color: #242424;
+  /* 背景色（ダークモード用） */
+
+  font-synthesis: none;
+  /* フォントの自動太字や斜体合成を無効化 */
+  text-rendering: optimizeLegibility;
+  /* テキストの可読性を向上 */
+  -webkit-font-smoothing: antialiased;
+  /* macOS・iOSのフォントを滑らかに */
+  -moz-osx-font-smoothing: grayscale;
+  /* Firefoxの滑らか化 */
+}
+
+/* -----------------------------------
+   body全体のレイアウト
+----------------------------------- */
+body {
+  margin: 0;
+  /* ブラウザデフォルトの余白を消す */
+  display: flex;
+  /* Flexboxレイアウト */
+  place-items: center;
+  /* 横縦中央揃え */
+  min-width: 320px;
+  /* 最小横幅 */
+  min-height: 100vh;
+  /* 画面全体の高さ */
+}
+
+/* -----------------------------------
+   見出しスタイル
+----------------------------------- */
+h1 {
+  font-size: 3.2em;
+  /* 大きめの見出し */
+  line-height: 1.1;
+  /* 行間を詰めてタイトル感を強調 */
+}
+
+/* -----------------------------------
+   アプリ全体のコンテナ
+----------------------------------- */
+#app {
+  max-width: 1280px;
+  /* 最大幅を1280pxに制限 */
+  margin: 0 auto;
+  /* 横中央寄せ */
+  padding: 2rem;
+  /* 内側余白 */
+  text-align: center;
+  /* 中央揃え */
+}
+
+/* -----------------------------------
+   ライトモード用（OS設定に依存）
+----------------------------------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    /* 文字色（濃いグレー） */
+    background-color: #ffffff;
+    /* 背景を白に */
+  }
+}
