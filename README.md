@@ -4,8 +4,8 @@
 ---
 
 ## 🛠 推奨 IDE
-** [VS Code](https://code.visualstudio.com/) + [Svelte拡張](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) **
-  
+[VS Code](https://code.visualstudio.com/) + [Svelte拡張](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+
 ---
 
 ## 📦 公式フレームワークを使いたい場合
